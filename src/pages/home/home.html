@@ -7,8 +7,35 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div>
+    The world is your oyster.
+    <p>
+      If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    </p>
+    <ion-list>
+      <ion-item>
+        <button (click)="showGuide()" ion-button>Show Or Hide Guide</button>
+      </ion-item>
+      <div #button1>
+        <ion-item>
+          <button  ion-button>Button 1</button>
+        </ion-item>
+      </div>
+      <div #button2>
+      <ion-item>
+        <button ion-button>Button 2</button>
+      </ion-item>
+      </div>
+      <div #button3>
+      <ion-item>
+        <button ion-button>Button 3</button>
+      </ion-item>
+      </div>
+    </ion-list>
+  </div>
 </ion-content>
+
+<div [hidden]="shouldHide">
+  <wt [displayOnOff]="v_displayOnOff" #wtid (respFromWt)="handleWtRes($event)">
+  </wt>
+</div>
